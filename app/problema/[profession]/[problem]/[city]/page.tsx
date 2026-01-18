@@ -1,65 +1,57 @@
 import { notFound } from "next/navigation"
 import type { Metadata } from "next"
+import { Header } from "@/components/header"
+import { UrgencyBanner } from "@/components/urgency-banner"
+import { Footer } from "@/components/footer"
+import { AIChatWidget } from "@/components/ai-chat-widget"
 import { ServiceLandingTemplate } from "@/components/service-landing-template"
-import { getCityBySlug, getProfessionBySlug, getProblemBySlug } from "@/lib/seo-data"
+import { PROFESSIONS, PROBLEMS, getCityDisplayName } from "@/lib/seo-data"
 
-// ISR: regenerate pages weekly
-export const revalidate = 604800
 export const dynamicParams = true
+export const revalidate = 604800
+
+const VALID_PROFESSIONS = ["electricista", "fontanero", "cerrajero", "desatascos", "calderas"]
 
 interface PageProps {
-  params: Promise<{
-    profession: string
-    problem: string
-    city: string
-  }>
+  params: Promise<{ profession: string; problem: string; city: string }>
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { profession: professionSlug, problem: problemSlug, city: citySlug } = await params
-
-  const profession = getProfessionBySlug(professionSlug)
-  const city = getCityBySlug(citySlug)
-  const problem = getProblemBySlug(professionSlug, problemSlug)
-
-  if (!profession || !city || !problem) {
-    return { title: "Página no encontrada" }
-  }
-
-  const title = `${problem.name} en ${city.name} - ${profession.name} 24H | HOGARYA`
-  const description = `${problem.name} en ${city.name} ✓ ${profession.name} especializado ✓ Servicio 24h ✓ Llegamos en 30 min ✓ ${problem.description}. Llama: 711 267 223.`
-
+  const { profession: professionId, problem: problemId, city: citySlug } = await params
+  if (!VALID_PROFESSIONS.includes(professionId)) return { title: "No encontrado" }
+  const profession = PROFESSIONS.find((p) => p.id === professionId)
+  if (!profession) return {}
+  const problems = PROBLEMS[professionId as keyof typeof PROBLEMS] || []
+  const problem = problems.find((p) => p.id === problemId)
+  if (!problem) return {}
+  const cityName = getCityDisplayName(citySlug)
   return {
-    title,
-    description,
-    keywords: [
-      `${problem.name.toLowerCase()} ${city.name.toLowerCase()}`,
-      `${profession.name.toLowerCase()} ${problem.slug.replace("-", " ")} ${city.name.toLowerCase()}`,
-      `reparar ${problem.name.toLowerCase()} ${city.name.toLowerCase()}`,
-      `solucionar ${problem.name.toLowerCase()} ${city.province.toLowerCase()}`,
-    ],
-    openGraph: {
-      title,
-      description,
-      type: "website",
-      locale: "es_ES",
-    },
+    title: `${problem.name} en ${cityName} - ${profession.name} Urgente | Rapidfix`,
+    description: `${problem.description} en ${cityName}? Solucionamos ${problem.name.toLowerCase()} en 10 minutos. ${profession.namePlural} 24h. Llama: 711 267 223.`,
+    keywords: `${problem.name.toLowerCase()} ${cityName}, ${profession.id} ${problem.id} ${cityName}, ${problem.id} urgente ${cityName}`,
     alternates: {
-      canonical: `https://hogarya.es/problema/${professionSlug}/${problemSlug}/${citySlug}`,
+      canonical: `https://www.hogarya.eu/problema/${professionId}/${problemId}/${citySlug}/`,
     },
   }
 }
 
 export default async function ProblemCityPage({ params }: PageProps) {
-  const { profession: professionSlug, problem: problemSlug, city: citySlug } = await params
-
-  const profession = getProfessionBySlug(professionSlug)
-  const city = getCityBySlug(citySlug)
-  const problem = getProblemBySlug(professionSlug, problemSlug)
-
-  if (!profession || !city || !problem) {
-    notFound()
-  }
-
-  return <ServiceLandingTemplate profession={profession} city={city} problem={problem} isUrgent={true} />
+  const { profession: professionId, problem: problemId, city: citySlug } = await params
+  if (!VALID_PROFESSIONS.includes(professionId)) notFound()
+  const profession = PROFESSIONS.find((p) => p.id === professionId)
+  if (!profession) notFound()
+  const problems = PROBLEMS[professionId as keyof typeof PROBLEMS] || []
+  const problem = problems.find((p) => p.id === problemId)
+  if (!problem) notFound()
+  return (
+    <div className="min-h-screen flex flex-col bg-background">
+      <UrgencyBanner />
+      <Header />
+      <main className="flex-1">
+        <ServiceLandingTemplate professionId={professionId} citySlug={citySlug} problemId={problemId} />
+      </main>
+      <Footer />
+      <AIChatWidget />
+    </div>
+  )
 }

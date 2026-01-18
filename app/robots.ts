@@ -5,8 +5,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: ["/api/", "/admin/"],
+      disallow: ["/api/", "/admin/", "/0x/"],
     },
-    sitemap: "https://hogarya.es/sitemap-index.xml",
+    sitemap: "https://www.hogarya.eu/sitemap-v1.xml",
   }
 }
