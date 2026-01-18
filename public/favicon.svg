@@ -1,0 +1,6 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- HOGARYA - Casa moderna con punto de luz -->
+  <rect width="32" height="32" rx="8" fill="#10B981"/>
+  <path d="M16 5L5 14V26C5 26.5523 5.44772 27 6 27H12V19C12 18.4477 12.4477 18 13 18H19C19.5523 18 20 18.4477 20 19V27H26C26.5523 27 27 26.5523 27 26V14L16 5Z" fill="white"/>
+  <circle cx="16" cy="12" r="2" fill="#10B981"/>
+</svg>
