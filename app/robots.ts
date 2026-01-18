@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: ["/api/", "/admin/", "/0x/"],
     },
-    sitemap: "https://www.hogarya.eu/sitemap-v1.xml",
+    sitemap: "https://www.hogarya.eu/sitemap-v2.xml",
   }
 }
