@@ -3,6 +3,7 @@ import { VALID_PROFESSIONS, CITIES, MODIFIERS, PROBLEMS, type Profession } from 
 
 export const dynamic = "force-dynamic"
 export const runtime = "nodejs"
+export const maxDuration = 60
 
 // Max 50,000 URLs per sitemap (Google limit)
 const MAX_URLS_PER_SITEMAP = 45000 // Leave margin
