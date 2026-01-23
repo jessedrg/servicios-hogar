@@ -10,9 +10,9 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "HOGARYA | Servicios Urgentes 24h - Fontaneros, Electricistas, Cerrajeros",
+  title: "SERVICIOS HOGAR | Servicios Urgentes 24h - Fontaneros, Electricistas, Cerrajeros",
   description:
-    "HOGARYA - Servicios de emergencia 24/7 en toda España. Fontanero urgente, electricista 24h, cerrajero express, desatascos. Respuesta en 30 minutos. Presupuesto gratis sin compromiso.",
+    "SERVICIOS HOGAR - Servicios de emergencia 24/7 en toda España. Fontanero urgente, electricista 24h, cerrajero express, desatascos. Respuesta en 30 minutos. Presupuesto gratis sin compromiso.",
   keywords:
     "fontanero urgente 24 horas, electricista urgente cerca de mi, cerrajero 24 horas, desatasco urgente, reparación calderas urgente, fontanero barcelona, electricista madrid urgente",
   icons: {
@@ -21,11 +21,11 @@ export const metadata: Metadata = {
     apple: "/favicon.svg",
   },
   openGraph: {
-    title: "HOGARYA - Servicios Urgentes 24/7 en Toda España",
+    title: "SERVICIOS HOGAR - Servicios Urgentes 24/7 en Toda España",
     description: "Profesionales verificados en menos de 30 minutos. Presupuesto gratis sin compromiso.",
     type: "website",
     locale: "es_ES",
-    siteName: "HOGARYA",
+    siteName: "SERVICIOS HOGAR",
   },
   robots: {
     index: true,
@@ -75,7 +75,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              name: "HOGARYA",
+              name: "SERVICIOS HOGAR",
               description: "Servicios de emergencia 24/7 en toda España",
               telephone: "+34-900-123-456",
               priceRange: "€€",

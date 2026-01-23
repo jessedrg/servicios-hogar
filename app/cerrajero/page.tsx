@@ -11,7 +11,7 @@ import { AIChatWidget } from "@/components/ai-chat-widget"
 import { Header } from "@/components/header"
 
 export const metadata: Metadata = {
-  title: "Cerrajero Urgente 24h | Apertura en 15 Minutos | HOGARYA",
+  title: "Cerrajero Urgente 24h | Apertura en 15 Minutos | SERVICIOS HOGAR",
   description:
     "Cerrajero urgente en toda España. Profesionales en 15 minutos. Apertura de puertas, cambio de cerraduras, bombines. Servicio 24/7. Sin roturas.",
   keywords:

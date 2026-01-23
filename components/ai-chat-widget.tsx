@@ -410,7 +410,7 @@ export function AIChatWidget({ service }: AIChatWidgetProps = {}) {
                 </svg>
               </div>
               <div>
-                <h3 className="font-semibold text-sm">HOGARYA</h3>
+                <h3 className="font-semibold text-sm">SERVICIOS HOGAR</h3>
                 <div className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full" />
                   <span className="text-xs text-background/60">Online ahora</span>

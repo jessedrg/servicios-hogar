@@ -86,11 +86,11 @@ export function Footer() {
 
         <div className="border-t border-background/10 pt-10 space-y-4">
           <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 text-sm text-background/40">
-            <p>© 2025 HOGARYA. Todos los derechos reservados.</p>
+            <p>© 2025 SERVICIOS HOGAR. Todos los derechos reservados.</p>
             <p className="text-xs">Actualmente en Barcelona. Próximamente en más ciudades de España.</p>
           </div>
           <p className="text-xs text-background/30 max-w-3xl">
-            HOGARYA actúa como plataforma de conexión entre clientes y profesionales independientes. La responsabilidad
+            SERVICIOS HOGAR actúa como plataforma de conexión entre clientes y profesionales independientes. La responsabilidad
             sobre la calidad, garantías y ejecución de los servicios recae exclusivamente en el profesional que realiza
             el trabajo.
           </p>

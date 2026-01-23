@@ -11,13 +11,13 @@ import { AIChatWidget } from "@/components/ai-chat-widget"
 import { Header } from "@/components/header"
 
 export const metadata: Metadata = {
-  title: "Electricista Urgente 24h | HOGARYA | Servicio en 30 Minutos",
+  title: "Electricista Urgente 24h | SERVICIOS HOGAR | Servicio en 30 Minutos",
   description:
     "Electricista urgente en toda España. Profesionales en 30 minutos. Averías eléctricas, cuadros eléctricos, enchufes. Servicio 24/7. Presupuesto gratis.",
   keywords:
     "electricista urgente, electricista 24 horas, avería eléctrica, electricista Madrid, electricista Barcelona, sin luz",
   openGraph: {
-    title: "Electricista Urgente 24h | HOGARYA",
+    title: "Electricista Urgente 24h | SERVICIOS HOGAR",
     description: "Profesionales en 30 minutos. Presupuesto gratis sin compromiso.",
   },
 }

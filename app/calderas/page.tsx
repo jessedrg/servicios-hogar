@@ -11,7 +11,7 @@ import { AIChatWidget } from "@/components/ai-chat-widget"
 import { Header } from "@/components/header"
 
 export const metadata: Metadata = {
-  title: "Reparación de Calderas 24h | Servicio Urgente | HOGARYA",
+  title: "Reparación de Calderas 24h | Servicio Urgente | SERVICIOS HOGAR",
   description:
     "Reparación de calderas urgente en toda España. Técnicos en 30 minutos. Calderas de gas, gasoil, mantenimiento. Servicio 24/7. Presupuesto gratis.",
   keywords:

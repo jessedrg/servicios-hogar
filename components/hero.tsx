@@ -23,7 +23,7 @@ export function Hero() {
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-medium">
               <Zap className="h-4 w-4" />
-              <span>Servicio 24/7 en toda España</span>
+              <span>Servicios Profesionales 24/7</span>
             </div>
 
             <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tighter leading-[0.9]">

@@ -11,13 +11,13 @@ import { AIChatWidget } from "@/components/ai-chat-widget"
 import { Header } from "@/components/header"
 
 export const metadata: Metadata = {
-  title: "Desatascos Urgentes 24h en Toda España | HOGARYA | Respuesta en 30min",
+  title: "Desatascos Urgentes 24h en Toda España | SERVICIOS HOGAR | Respuesta en 30min",
   description:
     "Desatascos urgentes 24 horas en toda España. Desatasco de tuberías, fregaderos, inodoros, bajantes. Profesionales en 30 minutos. Presupuesto gratis sin compromiso. Servicio garantizado.",
   keywords:
     "desatascos urgentes 24 horas, desatascar tuberías urgente, desatasco inodoro atascado, desatascos madrid baratos, desatascos barcelona urgente, fontanero desatascos, desatasco fregadero, desatasco bajantes, servicio desatascos cerca de mi",
   openGraph: {
-    title: "Desatascos Urgentes 24h | HOGARYA",
+    title: "Desatascos Urgentes 24h | SERVICIOS HOGAR",
     description: "Profesionales en 30 minutos. Presupuesto gratis sin compromiso.",
   },
 }
