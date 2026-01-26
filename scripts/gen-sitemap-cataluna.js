@@ -9,7 +9,7 @@ const path = require('path');
 // =============================================================================
 
 const BASE_URL = 'https://www.servicioshogar.xyz';
-const MAX_URLS_PER_SITEMAP = 45000;
+const MAX_URLS_PER_SITEMAP = 2000; // Reducido para que Google cargue más rápido
 const PROFESSIONS = ['electricista', 'fontanero', 'cerrajero', 'desatascos', 'calderas'];
 
 // =============================================================================
@@ -160,7 +160,7 @@ for (const f of sitemapFiles) {
   indexXml += `<sitemap><loc>${BASE_URL}/sitemaps/${f}</loc><lastmod>${date}</lastmod></sitemap>\n`;
 }
 indexXml += '</sitemapindex>';
-fs.writeFileSync(path.join(outputDir, 'sitemap-cat-index.xml'), indexXml);
+fs.writeFileSync(path.join(outputDir, 'sitemap-cat-v1.xml'), indexXml);
 
 // =============================================================================
 // RESUMEN
@@ -177,5 +177,5 @@ console.log(`🔥 Problemas:               ${Object.values(PROBLEMS).flat().leng
 console.log('='.repeat(65));
 console.log(`\n📂 Output: ${outputDir}/`);
 console.log(`\n📌 SITEMAP INDEX para Google Search Console:`);
-console.log(`   ${BASE_URL}/sitemaps/sitemap-cat-index.xml`);
+console.log(`   ${BASE_URL}/sitemaps/sitemap-cat-v1.xml`);
 console.log('\n🚀 ¡Listo para indexar!\n');
