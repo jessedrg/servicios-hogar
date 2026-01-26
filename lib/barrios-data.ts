@@ -11,6 +11,17 @@ export interface Barrio {
 
 // Barcelona - 73 barrios oficiales + zonas populares
 export const BARRIOS_BARCELONA: Barrio[] = [
+  // Distritos principales (más buscados)
+  { slug: "ciutat-vella", name: "Ciutat Vella", city: "barcelona", cityName: "Barcelona" },
+  { slug: "eixample", name: "Eixample", city: "barcelona", cityName: "Barcelona" },
+  { slug: "sants-montjuic", name: "Sants-Montjuïc", city: "barcelona", cityName: "Barcelona" },
+  { slug: "les-corts", name: "Les Corts", city: "barcelona", cityName: "Barcelona" },
+  { slug: "sarria-sant-gervasi", name: "Sarrià-Sant Gervasi", city: "barcelona", cityName: "Barcelona" },
+  { slug: "horta-guinardo", name: "Horta-Guinardó", city: "barcelona", cityName: "Barcelona" },
+  { slug: "nou-barris", name: "Nou Barris", city: "barcelona", cityName: "Barcelona" },
+  { slug: "sant-andreu", name: "Sant Andreu", city: "barcelona", cityName: "Barcelona" },
+  { slug: "sant-marti", name: "Sant Martí", city: "barcelona", cityName: "Barcelona" },
+  
   // Ciutat Vella
   { slug: "el-raval", name: "El Raval", city: "barcelona", cityName: "Barcelona" },
   { slug: "el-gotic", name: "El Gòtic", city: "barcelona", cityName: "Barcelona" },
