@@ -18,6 +18,7 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { profession: professionId, problem: problemId, city: citySlug } = await params
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.hogarya.eu").replace(/\/$/, "")
   if (!VALID_PROFESSIONS.includes(professionId)) return { title: "No encontrado" }
   const profession = PROFESSIONS.find((p) => p.id === professionId)
   if (!profession) return {}
@@ -30,7 +31,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: `${problem.description} en ${cityName}? Solucionamos ${problem.name.toLowerCase()} en 10 minutos. ${profession.namePlural} 24h. Llama: 711 267 223.`,
     keywords: `${problem.name.toLowerCase()} ${cityName}, ${profession.id} ${problem.id} ${cityName}, ${problem.id} urgente ${cityName}`,
     alternates: {
-      canonical: `https://www.hogarya.eu/problema/${professionId}/${problemId}/${citySlug}/`,
+      canonical: `${siteUrl}/problema/${professionId}/${problemId}/${citySlug}/`,
     },
   }
 }

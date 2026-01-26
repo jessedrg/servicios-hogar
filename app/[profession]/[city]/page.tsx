@@ -17,18 +17,25 @@ const RESERVED_PATHS = ["sitemap-files", "api", "problema", "precio", "presupues
 const KNOWN_MODIFIERS = [
   // Alta urgencia (High Intent)
   "urgente", "24-horas", "ahora", "hoy", "rapido", "inmediato", "ya", "emergencia", "express", "24h",
+  "urgencias", "ahora-mismo", "necesito",
   // Precio
   "economico", "barato", "low-cost", "precio", "presupuesto", "tarifa", "mejor-precio", "asequible",
+  "presupuesto-gratis", "precio-justo", "cuanto-cuesta", "precios",
   // Disponibilidad
   "de-guardia", "nocturno", "festivos", "fin-de-semana", "mismo-dia", "sabados", "domingos", "madrugada",
+  "abierto-hoy",
   // Ubicacion
   "cerca-de-mi", "a-domicilio", "zona", "barrio", "centro",
   // Confianza
   "profesional", "de-confianza", "con-garantia", "autorizados", "certificado", "oficial", "titulado",
+  "recomendado", "mejor", "fiable",
   // Servicio
   "reparacion", "instalacion", "mantenimiento", "revision", "averias",
   // Combinaciones
   "urgente-24h", "barato-urgente", "rapido-economico", "urgente-barato", "24h-economico",
+  "urgente-economico", "urgente-hoy", "rapido-barato", "profesional-barato",
+  // Búsquedas naturales
+  "busco", "contratar", "encontrar", "servicio",
 ] as const
 
 function parseProfessionAndModifier(rawProfession: string): {
@@ -65,6 +72,7 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { profession: rawProfession, city: citySlug } = await params
   const { professionId, modifier } = parseProfessionAndModifier(rawProfession)
+  const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.hogarya.eu").replace(/\/$/, "")
 
   if (!VALID_PROFESSIONS.includes(professionId)) {
     return { title: "No encontrado" }
@@ -95,7 +103,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       description: `${profession.name} ${modifierText.toLowerCase()} en ${cityName}. ${urgencyText} ${priceText} Profesionales certificados 24/7. Llama GRATIS: 711 267 223`,
       keywords: `${profession.id} ${modifier} ${cityName}, ${profession.id} ${cityName}, ${profession.id} urgente ${cityName}, ${profession.id} barato ${cityName}, ${profession.id} 24 horas ${cityName}`,
       alternates: {
-        canonical: `https://www.hogarya.eu/${rawProfession}/${citySlug}/`,
+        canonical: `${siteUrl}/${rawProfession}/${citySlug}/`,
       },
       openGraph: {
         title: `${profession.name} ${modifierText} en ${cityName} - Llegamos en 10 min`,
@@ -110,7 +118,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     description: `${profession.name} profesional en ${cityName}. Llegamos en 10 MIN. Servicio 24h los 365 dias. Presupuesto GRATIS sin compromiso. Llama ahora: 711 267 223`,
     keywords: `${profession.id} ${cityName}, ${profession.id} urgente ${cityName}, ${profession.id} 24 horas ${cityName}, ${profession.id} economico ${cityName}, ${profession.id} barato ${cityName}`,
     alternates: {
-      canonical: `https://www.hogarya.eu/${rawProfession}/${citySlug}/`,
+      canonical: `${siteUrl}/${rawProfession}/${citySlug}/`,
     },
     openGraph: {
       title: `${profession.name} en ${cityName} - Servicio Urgente 24h`,
