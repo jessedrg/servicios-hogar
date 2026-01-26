@@ -213,8 +213,8 @@ export function generateUniqueContent(
   const stats = generateStats(hash)
   
   // Info local
-  const provCode = provinceCode || "28" // Default Madrid
-  const province = PROVINCE_DATA[provCode] || PROVINCE_DATA["28"]
+  const provCode = provinceCode || "08" // Default Barcelona (Cataluña)
+  const province = PROVINCE_DATA[provCode] || PROVINCE_DATA["08"]
   const postalCode = generatePostalCode(provCode, hash)
   
   // Generar texto SEO único combinando elementos
