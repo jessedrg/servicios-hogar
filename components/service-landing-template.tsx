@@ -27,6 +27,7 @@ import Image from "next/image"
 import { getCityDisplayName, getCityProvince, getNearbyCities, PROBLEMS, PROFESSIONS } from "@/lib/seo-data"
 import { generateUniqueContent, generateTestimonials } from "@/lib/content-generator"
 import { FAQSection } from "@/components/faq-section"
+import { InternalLinks } from "@/components/internal-links"
 
 const ICONS = {
   Zap,
@@ -583,6 +584,17 @@ export function ServiceLandingTemplate({
 
       {/* FAQ Section */}
       <FAQSection profession={profession} cityName={cityName} modifier={modifier} />
+
+      {/* Internal Links for SEO */}
+      {actualCitySlug && (
+        <InternalLinks
+          professionId={profession.id}
+          professionName={profession.name}
+          citySlug={actualCitySlug}
+          cityName={cityName}
+          currentModifier={modifier}
+        />
+      )}
 
       {/* Final CTA */}
       <section className="py-16">

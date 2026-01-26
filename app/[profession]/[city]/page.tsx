@@ -7,9 +7,15 @@ import { AIChatWidget } from "@/components/ai-chat-widget"
 import { ServiceLandingTemplate } from "@/components/service-landing-template"
 import { PROFESSIONS, getCityDisplayName, getKeywordModifier } from "@/lib/seo-data"
 import { SEOSchema } from "@/components/seo-schema"
+import { generateStaticCombinations } from "@/lib/top-cities"
 
 export const dynamicParams = true
 export const revalidate = 604800
+
+// Prerender top 150 ciudades × 5 profesiones × top modificadores = ~2000 páginas estáticas
+export async function generateStaticParams() {
+  return generateStaticCombinations()
+}
 
 const VALID_PROFESSIONS = ["electricista", "fontanero", "cerrajero", "desatascos", "calderas"]
 
