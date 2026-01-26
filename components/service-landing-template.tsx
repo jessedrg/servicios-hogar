@@ -26,6 +26,7 @@ import {
 import Image from "next/image"
 import { getCityDisplayName, getCityProvince, getNearbyCities, PROBLEMS, PROFESSIONS } from "@/lib/seo-data"
 import { generateUniqueContent, generateTestimonials } from "@/lib/content-generator"
+import { FAQSection } from "@/components/faq-section"
 
 const ICONS = {
   Zap,
@@ -579,6 +580,9 @@ export function ServiceLandingTemplate({
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <FAQSection profession={profession} cityName={cityName} modifier={modifier} />
 
       {/* Final CTA */}
       <section className="py-16">

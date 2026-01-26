@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer"
 import { AIChatWidget } from "@/components/ai-chat-widget"
 import { ServiceLandingTemplate } from "@/components/service-landing-template"
 import { PROFESSIONS, getCityDisplayName, getKeywordModifier } from "@/lib/seo-data"
+import { SEOSchema } from "@/components/seo-schema"
 
 export const dynamicParams = true
 export const revalidate = 604800
@@ -143,24 +144,34 @@ export default async function ProfessionCityPage({ params }: PageProps) {
   }
 
   const profession = PROFESSIONS.find((p) => p.id === professionId) || PROFESSIONS[0]
+  const cityName = getCityDisplayName(citySlug)
 
   const modifierMeta = modifier ? getModifierMeta(modifier) : undefined
 
   return (
-    <div className="min-h-screen flex flex-col bg-background">
-      <UrgencyBanner />
-      <Header />
-      <main className="flex-1">
-        <ServiceLandingTemplate
-          professionId={profession.id}
-          citySlug={citySlug}
-          modifier={modifier}
-          modifierText={modifierMeta?.modifierText}
-          isUrgent={modifierMeta?.isUrgent}
-        />
-      </main>
-      <Footer />
-      <AIChatWidget />
-    </div>
+    <>
+      <SEOSchema
+        profession={profession}
+        cityName={cityName}
+        citySlug={citySlug}
+        modifier={modifier}
+        modifierText={modifierMeta?.modifierText}
+      />
+      <div className="min-h-screen flex flex-col bg-background">
+        <UrgencyBanner />
+        <Header />
+        <main className="flex-1">
+          <ServiceLandingTemplate
+            professionId={profession.id}
+            citySlug={citySlug}
+            modifier={modifier}
+            modifierText={modifierMeta?.modifierText}
+            isUrgent={modifierMeta?.isUrgent}
+          />
+        </main>
+        <Footer />
+        <AIChatWidget />
+      </div>
+    </>
   )
 }
