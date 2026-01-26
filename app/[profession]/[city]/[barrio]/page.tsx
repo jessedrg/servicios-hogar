@@ -115,7 +115,7 @@ export default async function BarrioPage({ params }: PageProps) {
         <main className="flex-1">
           <ServiceLandingTemplate
             professionId={profession.id}
-            citySlug={citySlug}
+            city={{ slug: barrioSlug, name: barrio.name, province: barrio.cityName }}
             modifier={modifier}
             modifierText={modifierText}
             isUrgent={isUrgent}
