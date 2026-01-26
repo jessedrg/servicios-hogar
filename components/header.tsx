@@ -53,7 +53,7 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <div
-        className={`bg-emerald-500 text-white py-2 px-4 transition-all duration-300 ${scrolled ? "hidden" : "block"}`}
+        className={`bg-gradient-to-r from-[#FF6B35] to-[#F7931E] text-white py-2 px-4 transition-all duration-300 ${scrolled ? "hidden" : "block"}`}
       >
         <div className="max-w-7xl mx-auto flex items-center justify-center gap-3 text-xs sm:text-sm font-medium">
           <Zap className="h-3.5 w-3.5" />
@@ -102,9 +102,9 @@ export function Header() {
                       <Link
                         key={service.href}
                         href={service.href}
-                        className="flex flex-col px-4 py-3 rounded-lg hover:bg-emerald-500/10 transition-colors group"
+                        className="flex flex-col px-4 py-3 rounded-lg hover:bg-[#FF6B35]/10 transition-colors group"
                       >
-                        <span className="font-medium text-foreground group-hover:text-emerald-500 transition-colors">
+                        <span className="font-medium text-foreground group-hover:text-[#FF6B35] transition-colors">
                           {service.name}
                         </span>
                         <span className="text-xs text-muted-foreground">{service.description}</span>
@@ -134,7 +134,7 @@ export function Header() {
               {/* Call button */}
               <a
                 href={`tel:+34${phoneNumber}`}
-                className="flex items-center gap-2 px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-white text-sm font-semibold rounded-full transition-all hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/25"
+                className="flex items-center gap-2 px-5 py-2.5 bg-[#FF6B35] hover:bg-[#F7931E] text-white text-sm font-semibold rounded-full transition-all hover:scale-105 hover:shadow-lg hover:shadow-[#FF6B35]/25"
               >
                 <div className="relative">
                   <Phone className="w-4 h-4" />
@@ -148,7 +148,7 @@ export function Header() {
             <div className="lg:hidden flex items-center gap-2">
               <a
                 href={`tel:+34${phoneNumber}`}
-                className="flex items-center gap-1.5 px-3 py-2 bg-emerald-500 text-white text-xs font-bold rounded-full"
+                className="flex items-center gap-1.5 px-3 py-2 bg-[#FF6B35] text-white text-xs font-bold rounded-full"
               >
                 <Phone className="w-3.5 h-3.5" />
                 <span>Llamar</span>
@@ -169,7 +169,7 @@ export function Header() {
                 {/* Phone CTA */}
                 <a
                   href={`tel:+34${phoneNumber}`}
-                  className="flex items-center justify-center gap-2 px-4 py-4 bg-emerald-500 text-white text-sm font-bold rounded-xl mb-3"
+                  className="flex items-center justify-center gap-2 px-4 py-4 bg-[#FF6B35] text-white text-sm font-bold rounded-xl mb-3"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   <Phone className="w-4 h-4" />

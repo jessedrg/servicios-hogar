@@ -90,7 +90,7 @@ function generateVisualFAQs(
   if (modifier === "economico" || modifier === "barato") {
     baseFAQs.unshift({
       question: `¿Dónde encontrar el ${profession.name.toLowerCase()} más barato en ${cityName}?`,
-      answer: `En HogarYa ofrecemos los precios más competitivos de ${profession.namePlural.toLowerCase()} en ${cityName}. Nuestras tarifas son hasta un 20% más económicas que la competencia, sin sacrificar calidad. Pide tu presupuesto gratis llamando al 711 267 223.`,
+      answer: `En Servicios Hogar ofrecemos los precios más competitivos de ${profession.namePlural.toLowerCase()} en ${cityName}. Nuestras tarifas son hasta un 20% más económicas que la competencia, sin sacrificar calidad. Pide tu presupuesto gratis llamando al 711 267 223.`,
     })
   }
 

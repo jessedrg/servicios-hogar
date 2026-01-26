@@ -10,22 +10,22 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "SERVICIOS HOGAR | Servicios Urgentes 24h - Fontaneros, Electricistas, Cerrajeros",
+  title: "Servicios Hogar | Urgencias 24h - Fontaneros, Electricistas, Cerrajeros en Cataluña",
   description:
-    "SERVICIOS HOGAR - Servicios de emergencia 24/7 en toda España. Fontanero urgente, electricista 24h, cerrajero express, desatascos. Respuesta en 30 minutos. Presupuesto gratis sin compromiso.",
+    "Servicios Hogar - Tu solución de emergencia 24/7 en Cataluña. Fontanero urgente, electricista 24h, cerrajero express, desatascos. Llegamos en 10 minutos. Presupuesto GRATIS. Llama: 711 267 223",
   keywords:
-    "fontanero urgente 24 horas, electricista urgente cerca de mi, cerrajero 24 horas, desatasco urgente, reparación calderas urgente, fontanero barcelona, electricista madrid urgente",
+    "fontanero urgente 24 horas barcelona, electricista urgente cataluña, cerrajero 24 horas girona, desatasco urgente tarragona, reparación calderas urgente lleida, servicios hogar urgentes",
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
     shortcut: "/favicon.svg",
     apple: "/favicon.svg",
   },
   openGraph: {
-    title: "SERVICIOS HOGAR - Servicios Urgentes 24/7 en Toda España",
-    description: "Profesionales verificados en menos de 30 minutos. Presupuesto gratis sin compromiso.",
+    title: "Servicios Hogar - Urgencias 24/7 en Cataluña | Llegamos en 10 min",
+    description: "Profesionales verificados en menos de 10 minutos. Presupuesto gratis sin compromiso. Fontaneros, electricistas, cerrajeros, desatascos y calderas.",
     type: "website",
     locale: "es_ES",
-    siteName: "SERVICIOS HOGAR",
+    siteName: "Servicios Hogar",
   },
   robots: {
     index: true,
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://hogarya.es",
+    canonical: "https://www.hogarya.eu",
   },
-    generator: 'v0.app'
+  generator: 'v0.app'
 }
 
 export const viewport = {
@@ -75,7 +75,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "LocalBusiness",
-              name: "SERVICIOS HOGAR",
+              name: "Servicios Hogar",
               description: "Servicios de emergencia 24/7 en toda España",
               telephone: "+34-900-123-456",
               priceRange: "€€",

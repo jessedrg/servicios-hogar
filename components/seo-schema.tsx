@@ -37,7 +37,7 @@ export function SEOSchema({
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": `${siteUrl}/${profession.id}/${citySlug}/#business`,
-    name: `${profession.name} en ${cityName} - HogarYa`,
+    name: `${profession.name} en ${cityName} - Servicios Hogar`,
     image: "https://www.hogarya.eu/og-image.jpg",
     telephone: phoneFormatted,
     email: "info@hogarya.eu",
@@ -105,7 +105,7 @@ export function SEOSchema({
     description: description,
     provider: {
       "@type": "LocalBusiness",
-      name: "HogarYa",
+      name: "Servicios Hogar",
       telephone: phoneFormatted,
     },
     areaServed: {
@@ -178,7 +178,7 @@ export function SEOSchema({
     description: description,
     brand: {
       "@type": "Brand",
-      name: "HogarYa",
+      name: "Servicios Hogar",
     },
     aggregateRating: {
       "@type": "AggregateRating",
@@ -274,7 +274,7 @@ function generateFAQs(
   if (modifier === "economico" || modifier === "barato") {
     baseFAQs.push({
       question: `¿Dónde encontrar un ${profession.name.toLowerCase()} barato en ${cityName}?`,
-      answer: `En HogarYa ofrecemos los mejores precios de ${profession.namePlural.toLowerCase()} en ${cityName}. Nuestros precios son hasta un 20% más económicos que la competencia, manteniendo la máxima calidad y garantía en todos los trabajos.`,
+      answer: `En Servicios Hogar ofrecemos los mejores precios de ${profession.namePlural.toLowerCase()} en ${cityName}. Nuestros precios son hasta un 20% más económicos que la competencia, manteniendo la máxima calidad y garantía en todos los trabajos.`,
     })
   }
 
