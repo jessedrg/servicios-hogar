@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://www.hogarya.eu",
+    canonical: "https://www.servicioshogar.xyz",
   },
   generator: 'v0.app'
 }

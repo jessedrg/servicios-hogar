@@ -8,7 +8,7 @@ const path = require('path');
 // Profesiones + Modificadores alta intención + 948 municipios Cataluña
 // =============================================================================
 
-const BASE_URL = 'https://www.hogarya.eu';
+const BASE_URL = 'https://www.servicioshogar.xyz';
 const MAX_URLS_PER_SITEMAP = 45000;
 const PROFESSIONS = ['electricista', 'fontanero', 'cerrajero', 'desatascos', 'calderas'];
 

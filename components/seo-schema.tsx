@@ -19,7 +19,7 @@ export function SEOSchema({
   problemName,
   phoneNumber = "711267223",
 }: SEOSchemaProps) {
-  const siteUrl = "https://www.hogarya.eu"
+  const siteUrl = "https://www.servicioshogar.xyz"
   const phoneFormatted = phoneNumber.replace(/(\d{3})(\d{3})(\d{3})/, "+34 $1 $2 $3")
   
   const serviceName = problemName 
