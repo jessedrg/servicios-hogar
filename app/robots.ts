@@ -10,7 +10,11 @@ export default function robots(): MetadataRoute.Robots {
     },
     sitemap: [
       `${siteUrl}/sitemap-v2.xml`,
-      `${siteUrl}/sitemap-cat-2026.xml`,
+      `${siteUrl}/sitemap-cat-index-1.xml`,
+      `${siteUrl}/sitemap-cat-index-2.xml`,
+      `${siteUrl}/sitemap-cat-index-3.xml`,
+      `${siteUrl}/sitemap-cat-index-4.xml`,
+      `${siteUrl}/sitemap-cat-index-5.xml`,
     ],
   }
 }

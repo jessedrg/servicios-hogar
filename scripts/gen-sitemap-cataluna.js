@@ -153,14 +153,31 @@ for (let i = 0; i < problemChunks; i++) {
   console.log(`   ✅ ${filename}: ${chunk.length.toLocaleString()} URLs`);
 }
 
-// 4. Sitemap Index
-let indexXml = '<?xml version="1.0" encoding="UTF-8"?>\n';
-indexXml += '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
-for (const f of sitemapFiles) {
-  indexXml += `<sitemap><loc>${BASE_URL}/sitemaps/${f}</loc><lastmod>${date}</lastmod></sitemap>\n`;
+// 4. Dividir en 5 Sitemap Indexes para mejor indexación en Google
+const NUM_INDEXES = 5;
+const filesPerIndex = Math.ceil(sitemapFiles.length / NUM_INDEXES);
+const indexFiles = [];
+
+console.log('\n📑 Generando 5 sitemap indexes...');
+for (let i = 0; i < NUM_INDEXES; i++) {
+  const start = i * filesPerIndex;
+  const end = Math.min(start + filesPerIndex, sitemapFiles.length);
+  const filesForThisIndex = sitemapFiles.slice(start, end);
+  
+  if (filesForThisIndex.length === 0) continue;
+  
+  let indexXml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+  indexXml += '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+  for (const f of filesForThisIndex) {
+    indexXml += `<sitemap><loc>${BASE_URL}/sitemaps/${f}</loc><lastmod>${date}</lastmod></sitemap>\n`;
+  }
+  indexXml += '</sitemapindex>';
+  
+  const indexFilename = `sitemap-cat-index-${i + 1}.xml`;
+  fs.writeFileSync(path.join(outputDir, '..', indexFilename), indexXml);
+  indexFiles.push(indexFilename);
+  console.log(`   ✅ ${indexFilename}: ${filesForThisIndex.length} sub-sitemaps`);
 }
-indexXml += '</sitemapindex>';
-fs.writeFileSync(path.join(outputDir, 'sitemap-cat-v1.xml'), indexXml);
 
 // =============================================================================
 // RESUMEN
@@ -169,13 +186,16 @@ console.log('\n' + '='.repeat(65));
 console.log('🎯 SITEMAP CATALUÑA - HOGARYA - ALTA INTENCIÓN GENERADO');
 console.log('='.repeat(65));
 console.log(`📊 Total URLs:              ${totalUrls.toLocaleString()}`);
-console.log(`📁 Archivos sitemap:        ${sitemapFiles.length + 1}`);
+console.log(`📁 Archivos sitemap:        ${sitemapFiles.length}`);
+console.log(`📑 Sitemap indexes:         ${indexFiles.length}`);
 console.log(`📍 Municipios Cataluña:     ${cityList.length}`);
 console.log(`🔧 Profesiones:             ${PROFESSIONS.length}`);
 console.log(`⚡ Modificadores:           ${HIGH_INTENT_MODIFIERS.length}`);
 console.log(`🔥 Problemas:               ${Object.values(PROBLEMS).flat().length}`);
 console.log('='.repeat(65));
 console.log(`\n📂 Output: ${outputDir}/`);
-console.log(`\n📌 SITEMAP INDEX para Google Search Console:`);
-console.log(`   ${BASE_URL}/sitemaps/sitemap-cat-v1.xml`);
+console.log(`\n📌 SITEMAP INDEXES para Google Search Console:`);
+for (const idx of indexFiles) {
+  console.log(`   ${BASE_URL}/${idx}`);
+}
 console.log('\n🚀 ¡Listo para indexar!\n');
