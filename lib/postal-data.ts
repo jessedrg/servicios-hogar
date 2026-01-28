@@ -1,6 +1,3 @@
-import fs from 'fs'
-import path from 'path'
-
 export interface PostalCodeData {
   cp: string
   poblacio: string
@@ -14,9 +11,6 @@ export interface PostalCodeGroup {
   provincia: string
   provinciaId: string
 }
-
-// Cache para evitar leer el CSV múltiples veces
-let postalDataCache: Map<string, PostalCodeGroup> | null = null
 
 // Mapeo de provincias a nombres más amigables
 const PROVINCIA_NAMES: Record<string, string> = {
@@ -179,62 +173,37 @@ const MADRID_BARRIOS: Record<string, string> = {
   '28055': 'Vicálvaro',
 }
 
-function parseCSV(): Map<string, PostalCodeGroup> {
-  if (postalDataCache) return postalDataCache
-
-  const csvPath = path.join(process.cwd(), 'postalcat.csv')
-  const content = fs.readFileSync(csvPath, 'utf-8')
-  const lines = content.split('\n')
-  
-  const groupedData = new Map<string, PostalCodeGroup>()
-  
-  // Skip header
-  for (let i = 1; i < lines.length; i++) {
-    const line = lines[i].trim()
-    if (!line) continue
-    
-    const parts = line.split(';')
-    if (parts.length < 6) continue
-    
-    const cp = parts[1]
-    const poblacio = parts[3]
-    const provinciaId = parts[4]
-    const provincia = parts[5]
-    
-    if (!cp || cp === 'cp') continue
-    
-    const existing = groupedData.get(cp)
-    if (existing) {
-      if (poblacio && !existing.poblaciones.includes(poblacio)) {
-        existing.poblaciones.push(poblacio)
-      }
-    } else {
-      groupedData.set(cp, {
-        cp,
-        poblaciones: poblacio ? [poblacio] : [],
-        provincia: PROVINCIA_NAMES[provinciaId] || provincia,
-        provinciaId,
-      })
-    }
+// Derivar provincia del código postal (los 2 primeros dígitos)
+function getProvinciaFromCP(cp: string): { provinciaId: string; provincia: string } {
+  const provinciaId = cp.substring(0, 2)
+  return {
+    provinciaId,
+    provincia: PROVINCIA_NAMES[provinciaId] || 'España',
   }
-  
-  postalDataCache = groupedData
-  return groupedData
 }
 
 export function getPostalCodeData(cp: string): PostalCodeGroup | null {
-  const data = parseCSV()
-  return data.get(cp) || null
+  if (!/^\d{5}$/.test(cp)) return null
+  
+  const { provinciaId, provincia } = getProvinciaFromCP(cp)
+  const barrio = BARCELONA_BARRIOS[cp] || MADRID_BARRIOS[cp]
+  
+  return {
+    cp,
+    poblaciones: barrio ? [barrio] : [],
+    provincia,
+    provinciaId,
+  }
 }
 
 export function getAllPostalCodes(): string[] {
-  const data = parseCSV()
-  return Array.from(data.keys())
+  // Retornar solo los códigos postales top para generateStaticParams
+  return getTopPostalCodes()
 }
 
 export function getPostalCodesByProvincia(provinciaId: string): PostalCodeGroup[] {
-  const data = parseCSV()
-  return Array.from(data.values()).filter(d => d.provinciaId === provinciaId)
+  // No necesitamos esto sin el CSV, retornar array vacío
+  return []
 }
 
 export function getBarrioName(cp: string): string | null {

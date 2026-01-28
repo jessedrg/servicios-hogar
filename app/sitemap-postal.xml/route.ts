@@ -1,36 +1,46 @@
 import { NextResponse } from "next/server"
-import fs from "fs"
-import path from "path"
 
 const PROFESSIONS = ["fontanero", "electricista", "cerrajero", "desatascos", "calderas"]
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.servicioshogar.xyz"
 
-// Cargar códigos postales únicos del CSV
-function getUniquePostalCodes(): string[] {
-  const csvPath = path.join(process.cwd(), "postalcat.csv")
-  const content = fs.readFileSync(csvPath, "utf-8")
-  const lines = content.split("\n")
+// Generar códigos postales de las principales ciudades
+function getTopPostalCodes(): string[] {
+  const codes: string[] = []
   
-  const postalCodes = new Set<string>()
+  // Barcelona (08001-08042)
+  for (let i = 8001; i <= 8042; i++) codes.push(i.toString().padStart(5, '0'))
+  // Madrid (28001-28055)
+  for (let i = 28001; i <= 28055; i++) codes.push(i.toString())
+  // Valencia (46001-46026)
+  for (let i = 46001; i <= 46026; i++) codes.push(i.toString())
+  // Sevilla (41001-41020)
+  for (let i = 41001; i <= 41020; i++) codes.push(i.toString())
+  // Zaragoza (50001-50018)
+  for (let i = 50001; i <= 50018; i++) codes.push(i.toString())
+  // Málaga (29001-29018)
+  for (let i = 29001; i <= 29018; i++) codes.push(i.toString())
+  // Bilbao (48001-48015)
+  for (let i = 48001; i <= 48015; i++) codes.push(i.toString())
+  // Alicante (03001-03016)
+  for (let i = 3001; i <= 3016; i++) codes.push(i.toString().padStart(5, '0'))
+  // Murcia (30001-30012)
+  for (let i = 30001; i <= 30012; i++) codes.push(i.toString())
+  // Palma (07001-07015)
+  for (let i = 7001; i <= 7015; i++) codes.push(i.toString().padStart(5, '0'))
+  // Las Palmas (35001-35020)
+  for (let i = 35001; i <= 35020; i++) codes.push(i.toString())
+  // Girona (17001-17007)
+  for (let i = 17001; i <= 17007; i++) codes.push(i.toString())
+  // Tarragona (43001-43007)
+  for (let i = 43001; i <= 43007; i++) codes.push(i.toString())
+  // Lleida (25001-25008)
+  for (let i = 25001; i <= 25008; i++) codes.push(i.toString())
   
-  for (let i = 1; i < lines.length; i++) {
-    const line = lines[i].trim()
-    if (!line) continue
-    
-    const parts = line.split(";")
-    if (parts.length < 2) continue
-    
-    const cp = parts[1]
-    if (cp && /^\d{5}$/.test(cp)) {
-      postalCodes.add(cp)
-    }
-  }
-  
-  return Array.from(postalCodes).sort()
+  return codes
 }
 
 export async function GET() {
-  const postalCodes = getUniquePostalCodes()
+  const postalCodes = getTopPostalCodes()
   const today = new Date().toISOString().split("T")[0]
   
   let xml = `<?xml version="1.0" encoding="UTF-8"?>
