@@ -4,7 +4,7 @@ import { CheckCircle } from "lucide-react"
 import { useState, useEffect } from "react"
 
 export default function PagoExitoso() {
-  const [phoneNumber, setPhoneNumber] = useState("711267223")
+  const [phoneNumber, setPhoneNumber] = useState("936946639")
 
   useEffect(() => {
     fetch("/api/config/phone")

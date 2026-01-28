@@ -91,7 +91,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!profession) {
     return {
       title: `Servicio en ${cityName} | Rapidfix`,
-      description: `Servicio profesional en ${cityName}. Llama: 711 267 223.`,
+      description: `Servicio profesional en ${cityName}. Llama: 936 946 639.`,
     }
   }
 
@@ -106,30 +106,30 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
         : "Precios justos y transparentes."
 
     return {
-      title: `${profession.name} ${modifierText} en ${cityName} | 10 Min | 711 267 223`,
-      description: `${profession.name} ${modifierText.toLowerCase()} en ${cityName}. ${urgencyText} ${priceText} Profesionales certificados 24/7. Llama GRATIS: 711 267 223`,
+      title: `${profession.name} ${modifierText} en ${cityName} | 10 Min | 936 946 639`,
+      description: `${profession.name} ${modifierText.toLowerCase()} en ${cityName}. ${urgencyText} ${priceText} Profesionales certificados 24/7. Llama GRATIS: 936 946 639`,
       keywords: `${profession.id} ${modifier} ${cityName}, ${profession.id} ${cityName}, ${profession.id} urgente ${cityName}, ${profession.id} barato ${cityName}, ${profession.id} 24 horas ${cityName}`,
       alternates: {
         canonical: `${siteUrl}/${rawProfession}/${citySlug}/`,
       },
       openGraph: {
         title: `${profession.name} ${modifierText} en ${cityName} - Llegamos en 10 min`,
-        description: `Servicio de ${profession.name.toLowerCase()} ${modifierText.toLowerCase()} en ${cityName}. Disponibles 24/7. Llama: 711 267 223`,
+        description: `Servicio de ${profession.name.toLowerCase()} ${modifierText.toLowerCase()} en ${cityName}. Disponibles 24/7. Llama: 936 946 639`,
         type: "website",
       },
     }
   }
 
   return {
-    title: `${profession.name} en ${cityName} | Urgencias 24h | 711 267 223`,
-    description: `${profession.name} profesional en ${cityName}. Llegamos en 10 MIN. Servicio 24h los 365 dias. Presupuesto GRATIS sin compromiso. Llama ahora: 711 267 223`,
+    title: `${profession.name} en ${cityName} | Urgencias 24h | 936 946 639`,
+    description: `${profession.name} profesional en ${cityName}. Llegamos en 10 MIN. Servicio 24h los 365 dias. Presupuesto GRATIS sin compromiso. Llama ahora: 936 946 639`,
     keywords: `${profession.id} ${cityName}, ${profession.id} urgente ${cityName}, ${profession.id} 24 horas ${cityName}, ${profession.id} economico ${cityName}, ${profession.id} barato ${cityName}`,
     alternates: {
       canonical: `${siteUrl}/${rawProfession}/${citySlug}/`,
     },
     openGraph: {
       title: `${profession.name} en ${cityName} - Servicio Urgente 24h`,
-      description: `Servicio de ${profession.name.toLowerCase()} en ${cityName}. Profesionales certificados, llegamos en 10 minutos. Llama: 711 267 223`,
+      description: `Servicio de ${profession.name.toLowerCase()} en ${cityName}. Profesionales certificados, llegamos en 10 minutos. Llama: 936 946 639`,
       type: "website",
     },
   }

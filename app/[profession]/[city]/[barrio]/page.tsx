@@ -68,8 +68,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const fullLocation = `${barrio.name}, ${barrio.cityName}`
 
   return {
-    title: `${profession.name} ${modifierText} en ${barrio.name} (${barrio.cityName}) | 10 Min | 711 267 223`,
-    description: `${profession.name} ${modifierText.toLowerCase()} en ${fullLocation}. Llegamos en 10 MIN. Servicio 24h. Profesionales del barrio. Presupuesto GRATIS. Llama: 711 267 223`,
+    title: `${profession.name} ${modifierText} en ${barrio.name} (${barrio.cityName}) | 10 Min | 936 946 639`,
+    description: `${profession.name} ${modifierText.toLowerCase()} en ${fullLocation}. Llegamos en 10 MIN. Servicio 24h. Profesionales del barrio. Presupuesto GRATIS. Llama: 936 946 639`,
     keywords: `${profession.id} ${barrio.name}, ${profession.id} ${modifierText} ${barrio.name}, ${profession.id} urgente ${barrio.name} ${barrio.cityName}`,
     alternates: {
       canonical: `${siteUrl}/${rawProfession}/${citySlug}/${barrioSlug}/`,

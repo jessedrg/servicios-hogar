@@ -17,7 +17,7 @@ export function SEOSchema({
   modifier,
   modifierText,
   problemName,
-  phoneNumber = "711267223",
+  phoneNumber = "936946639",
 }: SEOSchemaProps) {
   const siteUrl = "https://www.servicioshogar.xyz"
   const phoneFormatted = phoneNumber.replace(/(\d{3})(\d{3})(\d{3})/, "+34 $1 $2 $3")

@@ -48,7 +48,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title: `${fullQuestion} | Servicios Hogar`,
-    description: `Respuesta profesional: ${fullQuestion} Descubre precios, tiempos y consejos de expertos. Servicio 24h. Llama: 711 267 223`,
+    description: `Respuesta profesional: ${fullQuestion} Descubre precios, tiempos y consejos de expertos. Servicio 24h. Llama: 936 946 639`,
     alternates: {
       canonical: `https://www.servicioshogar.xyz/preguntas/${slug}/`,
     },
@@ -128,11 +128,11 @@ export default async function PAAPage({ params }: PageProps) {
               <h3 className="text-2xl font-bold mb-2">¿Necesitas un {question.professionName.toLowerCase()}?</h3>
               <p className="opacity-90 mb-6">Llegamos en 10 minutos. Presupuesto gratis.</p>
               <a
-                href="tel:+34711267223"
+                href="tel:+34936946639"
                 className="inline-flex items-center gap-3 px-8 py-4 bg-white text-[#FF6B35] font-bold text-lg rounded-xl hover:bg-gray-100 transition-all"
               >
                 <Phone className="w-5 h-5" />
-                <span>711 267 223</span>
+                <span>936 946 639</span>
               </a>
               <p className="mt-4 text-sm opacity-80 flex items-center justify-center gap-2">
                 <Clock className="w-4 h-4" />

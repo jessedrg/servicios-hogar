@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const cityName = getCityDisplayName(citySlug)
   return {
     title: `${problem.name} en ${cityName} - ${profession.name} Urgente | Rapidfix`,
-    description: `${problem.description} en ${cityName}? Solucionamos ${problem.name.toLowerCase()} en 10 minutos. ${profession.namePlural} 24h. Llama: 711 267 223.`,
+    description: `${problem.description} en ${cityName}? Solucionamos ${problem.name.toLowerCase()} en 10 minutos. ${profession.namePlural} 24h. Llama: 936 946 639.`,
     keywords: `${problem.name.toLowerCase()} ${cityName}, ${profession.id} ${problem.id} ${cityName}, ${problem.id} urgente ${cityName}`,
     alternates: {
       canonical: `${siteUrl}/problema/${professionId}/${problemId}/${citySlug}/`,

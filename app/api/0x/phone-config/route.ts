@@ -6,7 +6,7 @@ const sql = neon(process.env.DATABASE_URL || process.env.NEON_DATABASE_URL || ""
 const DEFAULT_CONFIG = {
   activePhone: "phone1",
   phoneOptions: [
-    { id: "phone1", label: "Telefono Principal", number: "711267223" },
+    { id: "phone1", label: "Telefono Principal", number: "936946639" },
     { id: "phone2", label: "Telefono Alternativo", number: "644536400" },
   ],
 }

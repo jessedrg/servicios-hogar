@@ -66,7 +66,7 @@ function generateVisualFAQs(
   const baseFAQs = [
     {
       question: `¿Cuánto cuesta un ${profession.name.toLowerCase()} en ${cityName}?`,
-      answer: `El precio de un ${profession.name.toLowerCase()} en ${cityName} varía según el servicio. Los precios comienzan desde 39€ para trabajos básicos. Ofrecemos presupuesto GRATIS y sin compromiso. Llámanos al 711 267 223 para conocer el precio exacto de tu caso.`,
+      answer: `El precio de un ${profession.name.toLowerCase()} en ${cityName} varía según el servicio. Los precios comienzan desde 39€ para trabajos básicos. Ofrecemos presupuesto GRATIS y sin compromiso. Llámanos al 936 946 639 para conocer el precio exacto de tu caso.`,
     },
     {
       question: `¿Cuánto tarda en llegar un ${profession.name.toLowerCase()} a mi casa en ${cityName}?`,
@@ -82,7 +82,7 @@ function generateVisualFAQs(
     },
     {
       question: `¿Cómo puedo contactar con un ${profession.name.toLowerCase()} urgente en ${cityName}?`,
-      answer: `Para contactar con un ${profession.name.toLowerCase()} urgente en ${cityName}, simplemente llama al 711 267 223. Atendemos tu llamada al instante y en menos de 10 minutos tendrás un profesional en tu domicilio.`,
+      answer: `Para contactar con un ${profession.name.toLowerCase()} urgente en ${cityName}, simplemente llama al 936 946 639. Atendemos tu llamada al instante y en menos de 10 minutos tendrás un profesional en tu domicilio.`,
     },
   ]
 
@@ -90,21 +90,21 @@ function generateVisualFAQs(
   if (modifier === "economico" || modifier === "barato") {
     baseFAQs.unshift({
       question: `¿Dónde encontrar el ${profession.name.toLowerCase()} más barato en ${cityName}?`,
-      answer: `En Servicios Hogar ofrecemos los precios más competitivos de ${profession.namePlural.toLowerCase()} en ${cityName}. Nuestras tarifas son hasta un 20% más económicas que la competencia, sin sacrificar calidad. Pide tu presupuesto gratis llamando al 711 267 223.`,
+      answer: `En Servicios Hogar ofrecemos los precios más competitivos de ${profession.namePlural.toLowerCase()} en ${cityName}. Nuestras tarifas son hasta un 20% más económicas que la competencia, sin sacrificar calidad. Pide tu presupuesto gratis llamando al 936 946 639.`,
     })
   }
 
   if (modifier === "urgente" || modifier === "24-horas" || modifier === "ahora") {
     baseFAQs.unshift({
       question: `¿Qué hago si tengo una emergencia de ${profession.name.toLowerCase()} en ${cityName}?`,
-      answer: `En caso de emergencia, llama inmediatamente al 711 267 223. Nuestro servicio de ${profession.name.toLowerCase()} urgente en ${cityName} está operativo 24/7 y garantizamos llegada en 10 minutos para resolver cualquier emergencia.`,
+      answer: `En caso de emergencia, llama inmediatamente al 936 946 639. Nuestro servicio de ${profession.name.toLowerCase()} urgente en ${cityName} está operativo 24/7 y garantizamos llegada en 10 minutos para resolver cualquier emergencia.`,
     })
   }
 
   if (modifier === "nocturno" || modifier === "de-guardia") {
     baseFAQs.unshift({
       question: `¿Hay ${profession.namePlural.toLowerCase()} de guardia por la noche en ${cityName}?`,
-      answer: `Sí, tenemos ${profession.namePlural.toLowerCase()} de guardia toda la noche en ${cityName}. Nuestro servicio nocturno funciona de 22:00 a 08:00 sin ningún recargo extra. Llama al 711 267 223 a cualquier hora.`,
+      answer: `Sí, tenemos ${profession.namePlural.toLowerCase()} de guardia toda la noche en ${cityName}. Nuestro servicio nocturno funciona de 22:00 a 08:00 sin ningún recargo extra. Llama al 936 946 639 a cualquier hora.`,
     })
   }
 

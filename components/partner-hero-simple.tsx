@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 import { useState, useEffect } from "react"
 
 export function PartnerHeroSimple() {
-  const [phoneNumber, setPhoneNumber] = useState("711267223")
+  const [phoneNumber, setPhoneNumber] = useState("936946639")
 
   useEffect(() => {
     fetch("/api/config/phone")

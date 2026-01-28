@@ -1749,7 +1749,7 @@ export function DashboardClient({ initialStats }: DashboardClientProps) {
 
   const [activePhone, setActivePhone] = useState("phone1")
   const [phoneOptions, setPhoneOptions] = useState([
-    { id: "phone1", label: "Telefono Principal", number: "711267223" },
+    { id: "phone1", label: "Telefono Principal", number: "936946639" },
     { id: "phone2", label: "Telefono Alternativo", number: "644536400" },
   ])
   const [savingPhone, setSavingPhone] = useState(false)

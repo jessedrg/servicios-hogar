@@ -3,7 +3,7 @@ import { neon } from "@neondatabase/serverless"
 const sql = neon(process.env.NEON_DATABASE_URL!)
 
 const PHONE_OPTIONS = [
-  { id: "phone1", label: "Telefono Principal", number: "711267223" },
+  { id: "phone1", label: "Telefono Principal", number: "936946639" },
   { id: "phone2", label: "Telefono Alternativo", number: "644536400" },
 ]
 
@@ -27,7 +27,7 @@ export async function GET() {
     return Response.json({
       success: true,
       activePhone: "phone1",
-      phoneNumber: "711267223",
+      phoneNumber: "936946639",
       phoneOptions: PHONE_OPTIONS,
     })
   }

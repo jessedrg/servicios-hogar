@@ -255,45 +255,45 @@ export function generatePAAAnswer(question: PAAQuestion, cityName?: string): str
   const location = cityName ? ` en ${cityName}` : ""
   
   const answers: Record<string, string> = {
-    "cuanto-cobra-electricista-por-hora": `Un electricista${location} cobra entre 30€ y 50€ por hora de media. En Servicios Hogar, nuestros electricistas profesionales tienen tarifas desde 39€, con presupuesto gratis y sin compromiso. Llama al 711 267 223 para un presupuesto exacto.`,
+    "cuanto-cobra-electricista-por-hora": `Un electricista${location} cobra entre 30€ y 50€ por hora de media. En Servicios Hogar, nuestros electricistas profesionales tienen tarifas desde 39€, con presupuesto gratis y sin compromiso. Llama al 936 946 639 para un presupuesto exacto.`,
     
-    "cuanto-cuesta-arreglar-enchufe": `Arreglar un enchufe${location} cuesta entre 40€ y 80€ dependiendo del problema. En Servicios Hogar ofrecemos reparación de enchufes desde 39€ con garantía. Llegamos en 10 minutos. Llama: 711 267 223.`,
+    "cuanto-cuesta-arreglar-enchufe": `Arreglar un enchufe${location} cuesta entre 40€ y 80€ dependiendo del problema. En Servicios Hogar ofrecemos reparación de enchufes desde 39€ con garantía. Llegamos en 10 minutos. Llama: 936 946 639.`,
     
-    "cuanto-cobra-fontanero-desatascar": `Un fontanero${location} cobra entre 60€ y 150€ por desatascar, según la gravedad. En Servicios Hogar, desatascos desde 49€ con máquinas profesionales. Servicio 24h. Llama: 711 267 223.`,
+    "cuanto-cobra-fontanero-desatascar": `Un fontanero${location} cobra entre 60€ y 150€ por desatascar, según la gravedad. En Servicios Hogar, desatascos desde 49€ con máquinas profesionales. Servicio 24h. Llama: 936 946 639.`,
     
-    "cuanto-cuesta-cambiar-grifo": `Cambiar un grifo${location} cuesta entre 50€ y 120€ (mano de obra + materiales). En Servicios Hogar, cambio de grifos desde 45€. Fontaneros profesionales con garantía. Llama: 711 267 223.`,
+    "cuanto-cuesta-cambiar-grifo": `Cambiar un grifo${location} cuesta entre 50€ y 120€ (mano de obra + materiales). En Servicios Hogar, cambio de grifos desde 45€. Fontaneros profesionales con garantía. Llama: 936 946 639.`,
     
-    "cuanto-cobra-cerrajero-abrir-puerta": `Un cerrajero${location} cobra entre 60€ y 150€ por abrir una puerta, según el tipo de cerradura y la hora. En Servicios Hogar, apertura de puertas desde 49€, sin dañar la cerradura. Llegamos en 10 min. Llama: 711 267 223.`,
+    "cuanto-cobra-cerrajero-abrir-puerta": `Un cerrajero${location} cobra entre 60€ y 150€ por abrir una puerta, según el tipo de cerradura y la hora. En Servicios Hogar, apertura de puertas desde 49€, sin dañar la cerradura. Llegamos en 10 min. Llama: 936 946 639.`,
     
-    "cuanto-cuesta-cambiar-cerradura": `Cambiar una cerradura${location} cuesta entre 80€ y 200€ según el modelo. En Servicios Hogar, cambio de cerraduras desde 69€ con cerraduras de seguridad incluidas. Llama: 711 267 223.`,
+    "cuanto-cuesta-cambiar-cerradura": `Cambiar una cerradura${location} cuesta entre 80€ y 200€ según el modelo. En Servicios Hogar, cambio de cerraduras desde 69€ con cerraduras de seguridad incluidas. Llama: 936 946 639.`,
     
-    "cuanto-cuesta-desatascar-tuberia": `Desatascar una tubería${location} cuesta entre 50€ y 200€ según la complejidad. En Servicios Hogar, desatascos profesionales desde 49€ con cámara de inspección incluida. Llama: 711 267 223.`,
+    "cuanto-cuesta-desatascar-tuberia": `Desatascar una tubería${location} cuesta entre 50€ y 200€ según la complejidad. En Servicios Hogar, desatascos profesionales desde 49€ con cámara de inspección incluida. Llama: 936 946 639.`,
     
-    "cuanto-cuesta-revision-caldera": `La revisión de una caldera${location} cuesta entre 60€ y 100€. En Servicios Hogar, revisión completa de calderas desde 59€ con certificado oficial. Técnicos autorizados. Llama: 711 267 223.`,
+    "cuanto-cuesta-revision-caldera": `La revisión de una caldera${location} cuesta entre 60€ y 100€. En Servicios Hogar, revisión completa de calderas desde 59€ con certificado oficial. Técnicos autorizados. Llama: 936 946 639.`,
     
-    "cuanto-tarda-electricista-en-llegar": `Un electricista urgente${location} de Servicios Hogar llega en menos de 10 minutos. Tenemos profesionales distribuidos por toda la zona para garantizar la respuesta más rápida. Servicio 24h. Llama: 711 267 223.`,
+    "cuanto-tarda-electricista-en-llegar": `Un electricista urgente${location} de Servicios Hogar llega en menos de 10 minutos. Tenemos profesionales distribuidos por toda la zona para garantizar la respuesta más rápida. Servicio 24h. Llama: 936 946 639.`,
     
-    "cuanto-tarda-fontanero-urgente": `Un fontanero urgente${location} de Servicios Hogar llega en 10 minutos máximo. Disponemos de fontaneros de guardia las 24 horas, todos los días del año. Llama: 711 267 223.`,
+    "cuanto-tarda-fontanero-urgente": `Un fontanero urgente${location} de Servicios Hogar llega en 10 minutos máximo. Disponemos de fontaneros de guardia las 24 horas, todos los días del año. Llama: 936 946 639.`,
     
-    "cuanto-tarda-cerrajero-abrir-puerta": `Un cerrajero profesional tarda entre 5 y 15 minutos en abrir una puerta sin dañarla. En Servicios Hogar${location}, llegamos en 10 minutos y abrimos en otros 5-10 minutos. Llama: 711 267 223.`,
+    "cuanto-tarda-cerrajero-abrir-puerta": `Un cerrajero profesional tarda entre 5 y 15 minutos en abrir una puerta sin dañarla. En Servicios Hogar${location}, llegamos en 10 minutos y abrimos en otros 5-10 minutos. Llama: 936 946 639.`,
     
-    "hay-electricistas-24-horas": `Sí, en Servicios Hogar tenemos electricistas 24 horas${location}. Trabajamos noches, fines de semana y festivos sin recargo adicional. Llegamos en 10 minutos. Llama: 711 267 223.`,
+    "hay-electricistas-24-horas": `Sí, en Servicios Hogar tenemos electricistas 24 horas${location}. Trabajamos noches, fines de semana y festivos sin recargo adicional. Llegamos en 10 minutos. Llama: 936 946 639.`,
     
-    "fontanero-domingo-urgente": `Sí, en Servicios Hogar tenemos fontaneros que trabajan domingos y festivos${location}. Servicio de urgencias 24/7 sin recargo. Llegamos en 10 minutos. Llama: 711 267 223.`,
+    "fontanero-domingo-urgente": `Sí, en Servicios Hogar tenemos fontaneros que trabajan domingos y festivos${location}. Servicio de urgencias 24/7 sin recargo. Llegamos en 10 minutos. Llama: 936 946 639.`,
     
-    "cerrajero-nocturno-precio": `Un cerrajero de noche${location} en Servicios Hogar tiene el mismo precio que de día: desde 49€. No cobramos recargo nocturno ni por festivos. Servicio 24h. Llama: 711 267 223.`,
+    "cerrajero-nocturno-precio": `Un cerrajero de noche${location} en Servicios Hogar tiene el mismo precio que de día: desde 49€. No cobramos recargo nocturno ni por festivos. Servicio 24h. Llama: 936 946 639.`,
     
-    "desatascos-festivos": `Sí, en Servicios Hogar ofrecemos servicio de desatascos en festivos${location}. Trabajamos 24/7 los 365 días del año sin recargo. Llegamos en 10 minutos. Llama: 711 267 223.`,
+    "desatascos-festivos": `Sí, en Servicios Hogar ofrecemos servicio de desatascos en festivos${location}. Trabajamos 24/7 los 365 días del año sin recargo. Llegamos en 10 minutos. Llama: 936 946 639.`,
     
-    "que-hacer-si-no-hay-luz-en-casa": `Si no hay luz en casa: 1) Comprueba el cuadro eléctrico y sube los interruptores. 2) Verifica si hay luz en el edificio. 3) Si el problema persiste, llama a un electricista urgente. En Servicios Hogar llegamos en 10 minutos. Llama: 711 267 223.`,
+    "que-hacer-si-no-hay-luz-en-casa": `Si no hay luz en casa: 1) Comprueba el cuadro eléctrico y sube los interruptores. 2) Verifica si hay luz en el edificio. 3) Si el problema persiste, llama a un electricista urgente. En Servicios Hogar llegamos en 10 minutos. Llama: 936 946 639.`,
     
-    "que-hacer-si-hay-fuga-de-agua": `Si hay una fuga de agua: 1) Cierra la llave de paso general inmediatamente. 2) Corta la luz si el agua está cerca de enchufes. 3) Llama a un fontanero urgente. En Servicios Hogar llegamos en 10 minutos. Llama: 711 267 223.`,
+    "que-hacer-si-hay-fuga-de-agua": `Si hay una fuga de agua: 1) Cierra la llave de paso general inmediatamente. 2) Corta la luz si el agua está cerca de enchufes. 3) Llama a un fontanero urgente. En Servicios Hogar llegamos en 10 minutos. Llama: 936 946 639.`,
     
-    "que-hacer-si-me-quedo-fuera-de-casa": `Si te quedas fuera de casa: 1) Mantén la calma. 2) Comprueba ventanas o puertas alternativas. 3) Llama a un cerrajero profesional. En Servicios Hogar abrimos tu puerta en 10 minutos sin dañar la cerradura. Llama: 711 267 223.`,
+    "que-hacer-si-me-quedo-fuera-de-casa": `Si te quedas fuera de casa: 1) Mantén la calma. 2) Comprueba ventanas o puertas alternativas. 3) Llama a un cerrajero profesional. En Servicios Hogar abrimos tu puerta en 10 minutos sin dañar la cerradura. Llama: 936 946 639.`,
     
-    "que-hacer-si-se-atasca-el-water": `Si se atasca el váter: 1) No sigas tirando de la cadena. 2) Usa un desatascador de ventosa. 3) Si no funciona, llama a profesionales. En Servicios Hogar desatascamos en 10 minutos con garantía. Llama: 711 267 223.`,
+    "que-hacer-si-se-atasca-el-water": `Si se atasca el váter: 1) No sigas tirando de la cadena. 2) Usa un desatascador de ventosa. 3) Si no funciona, llama a profesionales. En Servicios Hogar desatascamos en 10 minutos con garantía. Llama: 936 946 639.`,
     
-    "que-hacer-si-la-caldera-no-enciende": `Si la caldera no enciende: 1) Comprueba que hay gas y luz. 2) Verifica la presión (debe estar entre 1 y 1.5 bar). 3) Reinicia la caldera. 4) Si sigue sin funcionar, llama a un técnico. En Servicios Hogar llegamos en 10 minutos. Llama: 711 267 223.`,
+    "que-hacer-si-la-caldera-no-enciende": `Si la caldera no enciende: 1) Comprueba que hay gas y luz. 2) Verifica la presión (debe estar entre 1 y 1.5 bar). 3) Reinicia la caldera. 4) Si sigue sin funcionar, llama a un técnico. En Servicios Hogar llegamos en 10 minutos. Llama: 936 946 639.`,
     
     "como-saber-si-electricista-es-bueno": `Para saber si un electricista es bueno: 1) Pide referencias y opiniones. 2) Verifica que tenga carnet de instalador autorizado. 3) Exige presupuesto por escrito. 4) Comprueba que ofrezca garantía. En Servicios Hogar todos nuestros electricistas están certificados.`,
     
@@ -301,14 +301,14 @@ export function generatePAAAnswer(question: PAAQuestion, cityName?: string): str
     
     "como-evitar-timos-cerrajeros": `Para evitar timos de cerrajeros: 1) Pide precio cerrado antes de que vengan. 2) Desconfía de precios muy bajos. 3) Exige factura con NIF. 4) Usa empresas con sede física. En Servicios Hogar ofrecemos precios transparentes desde 49€.`,
     
-    "mejor-electricista-cerca-de-mi": `El mejor electricista${location} es aquel que llega rápido, tiene buenos precios y ofrece garantía. En Servicios Hogar cumplimos todo: llegamos en 10 minutos, precios desde 39€ y garantía por escrito. Llama: 711 267 223.`,
+    "mejor-electricista-cerca-de-mi": `El mejor electricista${location} es aquel que llega rápido, tiene buenos precios y ofrece garantía. En Servicios Hogar cumplimos todo: llegamos en 10 minutos, precios desde 39€ y garantía por escrito. Llama: 936 946 639.`,
     
-    "fontanero-mas-barato": `El fontanero más barato${location} con calidad garantizada es Servicios Hogar. Precios desde 39€, sin sorpresas ni recargos. Presupuesto gratis. Llegamos en 10 minutos. Llama: 711 267 223.`,
+    "fontanero-mas-barato": `El fontanero más barato${location} con calidad garantizada es Servicios Hogar. Precios desde 39€, sin sorpresas ni recargos. Presupuesto gratis. Llegamos en 10 minutos. Llama: 936 946 639.`,
     
-    "cerrajero-mas-rapido": `El cerrajero más rápido${location} es Servicios Hogar. Llegamos en menos de 10 minutos a cualquier punto. Abrimos tu puerta sin dañar la cerradura. Servicio 24h. Llama: 711 267 223.`,
+    "cerrajero-mas-rapido": `El cerrajero más rápido${location} es Servicios Hogar. Llegamos en menos de 10 minutos a cualquier punto. Abrimos tu puerta sin dañar la cerradura. Servicio 24h. Llama: 936 946 639.`,
   }
   
-  return answers[question.slug] || `Contacta con Servicios Hogar${location} para resolver tu duda. Profesionales 24h. Llama: 711 267 223.`
+  return answers[question.slug] || `Contacta con Servicios Hogar${location} para resolver tu duda. Profesionales 24h. Llama: 936 946 639.`
 }
 
 // Generar todas las combinaciones para sitemap

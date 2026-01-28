@@ -22,24 +22,8 @@ const iconMap = {
 
 export function ServiceHero({ iconName = "wrench", title, subtitle, description }: ServiceHeroProps) {
   const Icon = iconMap[iconName as keyof typeof iconMap] || Wrench
-  const [phoneNumber, setPhoneNumber] = useState("711267223")
-  const [phoneFormatted, setPhoneFormatted] = useState("711 267 223")
-
-  useEffect(() => {
-    const fetchPhoneConfig = async () => {
-      try {
-        const res = await fetch("/api/config/phone")
-        const data = await res.json()
-        if (data.phoneNumber) {
-          setPhoneNumber(data.phoneNumber)
-          setPhoneFormatted(data.formatted || data.phoneNumber.replace(/(\d{3})(\d{3})(\d{3})/, "$1 $2 $3"))
-        }
-      } catch (error) {
-        console.error("Error fetching phone config:", error)
-      }
-    }
-    fetchPhoneConfig()
-  }, [])
+  const [phoneNumber] = useState("936946639")
+  const [phoneFormatted] = useState("936 946 639")
 
   return (
     <section className="relative bg-foreground overflow-hidden">

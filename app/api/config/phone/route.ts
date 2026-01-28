@@ -3,7 +3,7 @@ import { neon } from "@neondatabase/serverless"
 const sql = neon(process.env.DATABASE_URL || process.env.NEON_DATABASE_URL || "")
 
 const DEFAULT_PHONE_OPTIONS = [
-  { id: "phone1", label: "Telefono Principal", number: "711267223" },
+  { id: "phone1", label: "Telefono Principal", number: "936946639" },
   { id: "phone2", label: "Telefono Alternativo", number: "644536400" },
 ]
 
@@ -38,8 +38,8 @@ export async function GET() {
   } catch (error) {
     console.error("Error getting phone config:", error)
     return Response.json({
-      phoneNumber: "711267223",
-      formatted: "711 267 223",
+      phoneNumber: "936946639",
+      formatted: "936 946 639",
     })
   }
 }

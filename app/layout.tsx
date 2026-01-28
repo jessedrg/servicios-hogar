@@ -12,7 +12,7 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 export const metadata: Metadata = {
   title: "Servicios Hogar | Urgencias 24h - Fontaneros, Electricistas, Cerrajeros en Cataluña",
   description:
-    "Servicios Hogar - Tu solución de emergencia 24/7 en Cataluña. Fontanero urgente, electricista 24h, cerrajero express, desatascos. Llegamos en 10 minutos. Presupuesto GRATIS. Llama: 711 267 223",
+    "Servicios Hogar - Tu solución de emergencia 24/7 en Cataluña. Fontanero urgente, electricista 24h, cerrajero express, desatascos. Llegamos en 10 minutos. Presupuesto GRATIS. Llama: 936 946 639",
   keywords:
     "fontanero urgente 24 horas barcelona, electricista urgente cataluña, cerrajero 24 horas girona, desatasco urgente tarragona, reparación calderas urgente lleida, servicios hogar urgentes",
   icons: {

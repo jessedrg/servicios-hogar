@@ -66,8 +66,9 @@ export function AIChatWidget({ service }: AIChatWidgetProps = {}) {
   const [availabilityTime, setAvailabilityTime] = useState(15)
   const [currentActivity, setCurrentActivity] = useState(recentActivity[0])
   const [sessionId] = useState(() => generateSessionId())
-  const [phoneNumber, setPhoneNumber] = useState("711267223")
-  const [phoneFormatted, setPhoneFormatted] = useState("711 267 223")
+  const callPhoneNumber = "936946639"
+  const callPhoneFormatted = "936 946 639"
+  const [phoneNumber, setPhoneNumber] = useState("936946639")
 
   const messagesEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
@@ -79,7 +80,6 @@ export function AIChatWidget({ service }: AIChatWidgetProps = {}) {
         const data = await res.json()
         if (data.phoneNumber) {
           setPhoneNumber(data.phoneNumber)
-          setPhoneFormatted(data.formatted || data.phoneNumber.replace(/(\d{3})(\d{3})(\d{3})/, "$1 $2 $3"))
         }
       } catch (error) {
         console.error("Error fetching phone config:", error)
@@ -350,7 +350,7 @@ export function AIChatWidget({ service }: AIChatWidgetProps = {}) {
         }`}
       >
         <a
-          href={`tel:+34${phoneNumber}`}
+          href={`tel:+34${callPhoneNumber}`}
           className="group flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white pl-3 pr-4 py-2.5 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all"
           onClick={handleCallClick}
         >
@@ -360,7 +360,7 @@ export function AIChatWidget({ service }: AIChatWidgetProps = {}) {
           </div>
           <div className="flex flex-col leading-none">
             <span className="font-bold text-sm">Llamar</span>
-            <span className="text-[10px] text-emerald-100">{phoneFormatted}</span>
+            <span className="text-[10px] text-emerald-100">{callPhoneFormatted}</span>
           </div>
         </a>
 
@@ -467,7 +467,7 @@ export function AIChatWidget({ service }: AIChatWidgetProps = {}) {
             }}
           >
             <a
-              href={`https://wa.me/34${phoneNumber}?text=${encodeURIComponent(`Hola! Necesito ayuda con un servicio ${getServiceFromMessages()}`)}`}
+              href={`https://wa.me/34711267223?text=${encodeURIComponent(`Hola! Necesito ayuda con un servicio ${getServiceFromMessages()}`)}`}
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleWhatsAppClick}

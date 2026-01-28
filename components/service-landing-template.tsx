@@ -58,8 +58,8 @@ export function ServiceLandingTemplate({
   modifier,
   modifierText,
 }: ServiceLandingTemplateProps) {
-  const [phoneNumber, setPhoneNumber] = useState("711267223")
-  const [phoneFormatted, setPhoneFormatted] = useState("711 267 223")
+  const [phoneNumber] = useState("936946639")
+  const [phoneFormatted] = useState("936 946 639")
   const [activeUsers, setActiveUsers] = useState(12)
 
   const profession = professionProp || PROFESSIONS.find((p) => p.id === professionId) || PROFESSIONS[0]
@@ -73,18 +73,6 @@ export function ServiceLandingTemplate({
   const IconComponent = profession?.icon ? ICONS[profession.icon as keyof typeof ICONS] || Zap : Zap
 
   useEffect(() => {
-    const fetchPhone = async () => {
-      try {
-        const res = await fetch("/api/config/phone")
-        const data = await res.json()
-        if (data.phoneNumber) {
-          setPhoneNumber(data.phoneNumber)
-          setPhoneFormatted(data.formatted || data.phoneNumber.replace(/(\d{3})(\d{3})(\d{3})/, "$1 $2 $3"))
-        }
-      } catch (e) {}
-    }
-    fetchPhone()
-
     const userInterval = setInterval(() => {
       setActiveUsers((prev) => Math.max(8, Math.min(18, prev + Math.floor(Math.random() * 3) - 1)))
     }, 8000)
