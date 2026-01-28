@@ -18,7 +18,7 @@ export async function GET() {
 
   for (let i = 1; i <= totalSitemaps; i++) {
     xml += `  <sitemap>
-    <loc>${SITE_URL}/sitemap-postal/${i}.xml</loc>
+    <loc>${SITE_URL}/sitemap-cp/${i}.xml</loc>
     <lastmod>${today}</lastmod>
   </sitemap>
 `
