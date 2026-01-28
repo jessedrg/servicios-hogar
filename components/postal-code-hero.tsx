@@ -92,8 +92,7 @@ export function PostalCodeHero({
               <Button
                 asChild
                 size="lg"
-                variant="outline"
-                className="border-background/20 text-background hover:bg-background/10 font-semibold text-lg px-8 py-6"
+                className="bg-[#25D366] hover:bg-[#128C7E] text-white font-semibold text-lg px-8 py-6"
               >
                 <a href={`https://wa.me/34${phoneNumber}`} target="_blank" rel="noopener noreferrer">
                   WhatsApp Urgente

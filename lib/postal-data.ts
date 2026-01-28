@@ -1,3 +1,5 @@
+import { POSTAL_CODE_NAMES } from './postal-code-names'
+
 export interface PostalCodeData {
   cp: string
   poblacio: string
@@ -187,10 +189,11 @@ export function getPostalCodeData(cp: string): PostalCodeGroup | null {
   
   const { provinciaId, provincia } = getProvinciaFromCP(cp)
   const barrio = BARCELONA_BARRIOS[cp] || MADRID_BARRIOS[cp]
+  const poblacion = POSTAL_CODE_NAMES[cp]
   
   return {
     cp,
-    poblaciones: barrio ? [barrio] : [],
+    poblaciones: barrio ? [barrio] : poblacion ? [poblacion] : [],
     provincia,
     provinciaId,
   }
@@ -211,13 +214,17 @@ export function getBarrioName(cp: string): string | null {
 }
 
 export function getZoneName(cp: string): string {
+  // Primero barrios conocidos de Barcelona/Madrid
   const barrio = getBarrioName(cp)
-  const data = getPostalCodeData(cp)
-  
   if (barrio) return barrio
-  if (data && data.poblaciones.length > 0) {
-    return data.poblaciones[0]
+  
+  // Luego buscar en el CSV de poblaciones
+  const poblacion = POSTAL_CODE_NAMES[cp]
+  if (poblacion) {
+    // Limpiar el nombre (quitar cosas como "(ver Callejero)")
+    return poblacion.replace(/\s*\(.*\)\s*/g, '').trim()
   }
+  
   return `Zona ${cp}`
 }
 
